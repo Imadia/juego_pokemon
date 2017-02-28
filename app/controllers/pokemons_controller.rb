@@ -62,6 +62,11 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def add_pokemon
+    @added = Caught.create(pokemon_id: params[:id], user_id: current_user.id, level: 1)
+    redirect_to user_caughts_path(current_user.id), notice: 'Pokemon was successfully updated.' 
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokemon

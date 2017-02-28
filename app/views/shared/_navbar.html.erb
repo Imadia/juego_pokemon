@@ -20,8 +20,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
           <% if user_signed_in? %>
+          <li><a href="<%=user_caughts_path(current_user)%>">Mis Pokemones</a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <%= current_user.email %>

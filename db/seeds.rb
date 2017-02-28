@@ -13,3 +13,12 @@ Pokemon.destroy_all
 @descriptions.each_with_index do |p, i|
 	Pokemon.create(name: @names[i], description: p)
 end
+
+@user_names = ["Donatello", "Botticelli", "Michelangelo", "Raphael", "Titian", "Durer", "Caravaggio", "Rubens", "Bernini", "Rembrandt", "Pissarro", "Manet", "Degas", "Cezanne", "Monet", "Renoir", "Cassatt", "Gauguin", "Munch", "Klimt", "Matisse", "Picasso", "Kandinsky", "Chagall", "Seurat", "Magritte", "Escher", "Rothko", "Dali", "Kahlo", "Pollock", "Warhol", "Vettriano", "Da Vinci", "El Greco", "Winslow Homer", "Paul Klee", "Edward Hopper", "Diego Rivera", "Vincent", "Joan Miro", "Ansel Adams"]
+
+
+@user_names.each do |p|
+	User.create(email: "#{p}@#{p}.cl", name: p, password: 123456)
+	a = User.last
+	Caught.create(user_id: a.id, pokemon_id: rand(687..780), level: rand(5..30) )
+end
